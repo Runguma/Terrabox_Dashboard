@@ -352,12 +352,12 @@ body {
 /* Sidebar */
 
 .sidebar {
-  width: 25vw;
-  min-width: 400px;
-  max-width: 600px;
-  background-color: white ;
+  width: 5vw;
+  min-width: 350px;
+  max-width: 400px;
+  background-color: #FFECD6 ;
   /* UN-Habitat blue */
-  border-right:#a9ddec 6px solid;
+  border-right:#00B2E3 1px solid;
 
   color: #00B2E3;
   display: flex;
@@ -366,6 +366,7 @@ body {
   transition: width 0.3s ease;
   overflow: hidden;
   transition: transform 0.3s ease;
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.75);
 }
 
 /* Toggle button */
@@ -373,7 +374,7 @@ body {
 .toggle-btn {
   background: transparent;
   border: none;
-  color: white;
+  color: #00B2E3;
   font-size: 24px;
   cursor: pointer;
   margin-bottom: 20px;
@@ -383,7 +384,7 @@ body {
 
 .nav-links a {
   display: block;
-  color: white;
+  color: #00B2E3;
   font-size: 16px;
   font-weight: 500;
   text-decoration: none;
@@ -489,12 +490,15 @@ body {
 
 .accordion-btn {
   width: 100%;
-  background-color: white;
-  color: #333;
+  background-color: #FDA947;
+  color: white;
   font-size:18px;
   font-weight: 700;
+  letter-spacing: 0.5px; /* mild */
+
   padding: 12px;
-  text-align: center;
+  text-align: Left;
+  text-decoration: underline;
   border: 0px solid white;
   cursor: pointer;
   border-top: 1px solid #ddd;
@@ -503,7 +507,7 @@ body {
 }
 
 .accordion-btn:hover {
-  background-color: #e0e0e0;
+  background-color: #00b2e3c7;
 }
 
 .accordion-panel {
@@ -513,8 +517,9 @@ body {
   margin: 0 5px;
   font-size: 14px;
   font-weight: 300;
-  color: #333;
-  background-color: white;
+  color: white;
+  background-color: #FFBF7A;
+  letter-spacing: 0.5px; /* mild */
   transition: max-height 0.1s ease, padding 0.1s ease;
 }
 
@@ -539,8 +544,10 @@ body {
 .switch-group {
   margin-top: 16px;
   padding: 5px 5px;
-  background-color: #ffffff;
+  padding-top: 10px;
+  background-color: #FFD6A8;
   border: 0px solid #ddd;
+  color: black;
   border-radius: 1px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
@@ -552,7 +559,7 @@ body {
   gap: 10px;
   margin-bottom: 12px;
   font-size: 14px;
-  color: #333;
+  color: white;
 }
 
 /* Hide default checkbox */
@@ -594,6 +601,7 @@ body {
 
 .label-text {
   line-height: 1.4;
+  color:black;
 }
 
 /* Info Icons */
@@ -626,6 +634,7 @@ body {
   display: none;
   background: white;
   border: 1px solid #ccc;
+  color:rgb(66, 66, 66);
   border-radius: 1px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
   width: 420px;
@@ -651,6 +660,36 @@ body {
   border: 1px solid #ddd;
   padding: 6px 10px;
   text-align: left;
+}
+
+
+/* Style the tabs header */
+#content {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* or fixed like 500px or 100vh */
+}
+
+.tab-buttons {
+  margin-top: auto; /* pushes to the bottom */
+  display: flex;
+  gap: 16px;
+  justify-content: left;
+  padding-bottom: 10px;
+}
+.tab-btn {
+  background-color: #00B2E3; /* UN-Habitat blue */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tab-btn:hover {
+  background-color: #0095c8; /* slightly darker on hover */
 }
 
 
