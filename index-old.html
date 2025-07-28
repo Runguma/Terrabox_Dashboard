@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UN-Habitat Dashboard (Proposal)</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- ArcGIS JS API styles (optional) -->
+  <link rel="stylesheet" href="https://js.arcgis.com/4.29/esri/themes/light/main.css" />
+
+  <!-- Font Awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="CSS/NavBarStyles-old.css" />
+</head>
+
+<body>
+  <!-- 🔷 HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <!-- Logo -->
+      <div class="header-logo">
+        <img src="https://habnet.unhabitat.org/sites/default/files/BrandAssets/Logos/Blue%20logo/UN-Habitat%20logo_English.svg" alt="UN-Habitat Logo" class="header-logo-img" />
+      </div>
+
+      <!-- Title & Navigation -->
+      <div class="header-title-nav">
+        <div class="header-title-block">
+          <div class="header-title">Urban Indicators Database</div>
+        </div>
+
+        <!-- Nav Tabs -->
+        <div class="header-nav" id="mainNav">
+          <div class="nav-item">HOME</div>
+          <details class="nav-item dropdown-item">
+            <summary>DATA BY THEME</summary>
+            <div class="dropdown">
+              <a href="#">Urban population trends</a>
+              <a href="#">Access to basic services</a>
+              <a href="#">Economic indicators</a>
+              <a href="#">Housing and slums</a>
+              <a href="#">Open spaces</a>
+              <a href="#">Social inclusion</a>
+              <a href="#">Spatial growth</a>
+              <a href="#">Urban environment</a>
+              <a href="#">Urban transport</a>
+            </div>
+          </details>
+
+          <details class="nav-item dropdown-item">
+            <summary>RESOURCES</summary>
+            <div class="dropdown">
+              <a href="#">Datasets</a>
+              <a href="#">Data Visualizations</a>
+              <a href="#">Publications</a>
+              <a href="#">Guidance</a>
+              <a href="#">Urban Observatories</a>
+              <a href="#">COVID-19</a>
+              <a href="#">Urban Monitoring Framework</a>
+              <a href="#">Capacity Development</a>
+              <a href="#">City Prosperity Index</a>
+              <a href="#">National Sample of Cities</a>
+              <a href="#">Global Public Space Programme</a>
+              <a href="#">News and Data Stories</a>
+            </div>
+          </details>
+
+          <div class="nav-item active">DASHBOARD</div>
+
+          <details class="nav-item dropdown-item">
+            <summary>SDGs and NUA</summary>
+            <div class="dropdown">
+              <a href="#">SDGs</a>
+              <a href="#">New Urban Agenda (NUA)</a>
+            </div>
+          </details>
+
+          <div class="nav-item">ABOUT</div>
+        </div>
+      </div>
+
+      <!-- Sidebar Toggle Button -->
+      <button class="sidebar-toggle-header" onclick="toggleSidebar()">☰</button>
+    </div>
+  </div>
+
+  <!-- 🔷 MAIN CONTAINER -->
+  <div class="main-container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar" style="background-color: #d5f3fc2a; border-left-width: 0px;">
+      <div class="nav-links">
+      <!-- Accordion Button -->
+      <button class="accordion-btn" style="text-align: center; background-color: #00b2e3;">
+        <div style="display: flex; align-items: center; gap: 20px;">
+          <img src="\Images\SDG_Icons\SDG_Icon_V0Orig.png" alt="SDG 1 Icon" style="height: 100px; border: #f2f2f2 1px solid; border-radius: 5px;">
+          <p style="font-size:14px; margin: 0;">
+            <b style="font-size:18px; text-decoration: none; border-bottom: 3px double rgb(255, 255, 255);">SDG Goal & Indicator Menu</b>
+          </p>
+        </div>
+      </button>
+
+      <!-- Goal 1 Summary Button -->
+      <button class="accordion-btn active" style="font-size:18px; font-weight:600; text-decoration:none; text-align: left; background-color: #E5243B;">
+        <div style="display: flex; align-items: center; gap: 15px;">
+          <img src="\Images\SDG_Icons\SDG_1_V2.png" alt="SDG 1 Icon" style="height: 100px; border: #f2f2f2 1px solid; border-radius: 5px;">
+          <span style="font-size:14px;">
+            <b style="font-size:15px;">Goal 1: </b>End poverty in all its forms everywhere.
+          </span>
+        </div>
+      </button>
+
+      <!-- Accordion Panel -->
+      <div class="accordion-panel" style="background-color:white;">
+        <!-- Intro text -->
+        <p class="leftaligned-text" style="padding-top:10px; background-color: white; color:#E5243B; font-weight: 500; margin-bottom: 12px;">
+          <strong>SDG 1: No Poverty</strong> aims to End poverty in all its forms everywhere.
+        </p>
+
+        <div style="font-size: 14px; line-height: 1.6; color: #E5243B; font-weight:400; text-align: justify;">
+          <p style="margin-bottom: 12px;">
+            <strong>Eradicating poverty in all its forms</strong> remains one of the greatest challenges facing humanity.
+            While the number of people living in extreme poverty has dropped by more than half – from 1.9 billion in 1990 to 836 million in 2015 – too many people are still struggling to meet the most basic human needs.
+          </p>
+          <p style="margin-bottom: 12px;">
+            Globally, more than <strong>800 million people</strong> are still living on less than $1.25 a day; many lack access to adequate food, clean drinking water and sanitation.
+            Rapid economic growth in countries such as China and India has lifted millions out of poverty, but progress has been uneven.
+            <strong>Women are disproportionately affected</strong>; they are more likely to live in poverty, have less access to economic opportunities, and face barriers to property ownership.
+          </p>
+          <p style="margin-bottom: 12px;">
+            Poverty goes beyond lack of income. It includes <em>hunger, malnutrition, limited access to education and basic services, social discrimination, and exclusion</em>.
+            <strong>SDG 1</strong> aims to ensure social protection for the poor and vulnerable, increase access to basic services, and support those harmed by climate-related extreme events and other economic, social, and environmental shocks.
+          </p>
+          <p style="margin-bottom: 10px;">
+            <strong>Target 1.4:</strong> By 2030, ensure that all men and women, in particular the poor and the vulnerable, have equal rights to economic resources,
+            as well as access to basic services, ownership and control over land and other forms of property, inheritance, natural resources, appropriate new
+            technology and financial services, including microfinance.
+          </p>
+        </div>
+
+        <hr class="accordion-panelsection-divider">
+
+        <!-- Indicator 1.4.1 -->
+        <div class="switch-group" style="background-color: #f2f2f2; color:#E5243B; font-weight: 500; padding: 10px; border-radius: 5px; margin-bottom: 10px;">
+          <p style="margin-bottom: 10px;">
+            <strong>Indicator 1.4.1:</strong> Proportion of population living in households with access to basic services.
+          </p>
+          <hr class="accordion-panelsection-divider">
+          <label class="switch-item" style="display: flex; align-items: center; gap: 10px;">
+            <input type="checkbox" class="exclusive-toggle">
+            <span class="slider"></span>
+            <span class="label-text" style="color:#727171">SDG Indicator 1.4.1 – Administrative-level</span>
+          </label>
+        </div>
+
+        <!-- Indicator 1.4.2 -->
+        <div class="switch-group" style="background-color: #f2f2f2; color:#333; font-weight: 500; padding: 10px; border-radius: 5px;">
+          <p style="margin-bottom: 10px;">
+            <strong>Indicator 1.4.2:</strong> Proportion of total adult population with secure tenure rights to land,
+            (a) with legally recognized documentation, and (b) who perceive their rights to land as secure, by sex and type of tenure.
+          </p>
+          
+
+          <!-- Toggle: 1.4.2 - a -->
+          <label class="switch-item" style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+            <input type="checkbox" class="exclusive-toggle">
+            <span class="slider"></span>
+            <span class="label-text" style="color:#727171">SDG Indicator 1.4.2 – a – Administrative-level</span>
+          </label>
+
+          <!-- Toggle: 1.4.2 - b -->
+          <label class="switch-item" style="display: flex; align-items: center; gap: 10px;">
+            <input type="checkbox" class="exclusive-toggle">
+            <span class="slider"></span>
+            <span class="label-text" style="color:#727171">SDG Indicator 1.4.2 – b – Administrative-level</span>
+          </label>
+        </div>
+
+
+      </div>
+    </div>
+
+
+        <!-- Accordion Panel End -->
+        <div class="nav-links">
+        <!-- Accordion Button -->
+        <button class="accordion-btn active" style="text-decoration: none; font-size: 16px; text-align: left;">
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <img src="\Images\SDG_Icons\SDG_11_V2.png" alt="SDG 11 Icon" style="height: 100px; border: #f2f2f2 1px solid; border-radius: 5px;">
+            <span style="font-size:14px;">
+              <b style="font-size:15px;">Goal 11: </b>Make cities and human settlements inclusive, safe, resilient and sustainable.
+            </span>
+          </div>
+        </button>
+
+        
+
+        <!-- Accordion Panel (open by default) -->
+        <div class="accordion-panel" style="background-color:white; color:#ffb300; font-weight: 500;">
+
+          <!-- Intro text -->
+          <p class="leftaligned-text" style="padding-top:10px; background-color: white; color:#FDC300; font-weight: 500; margin-bottom: 12px;">
+            <strong>SDG 11: Sustainable Cities and Communities</strong> aims to make cities and human settlements inclusive, safe, resilient, and sustainable.
+          </p>
+
+          <div style="font-size: 14px; line-height: 1.6; color: #FDC300; text-align: justify; font-weight:400;">
+            <p style="margin-bottom: 12px;">
+              <strong>More than half of humanity</strong>—4.4 billion people—lives in cities today, and that number is expected to increase to 6.7 billion by 2050.
+              Cities are economic powerhouses, generating over 80% of global GDP, but they also face growing challenges related to urban poverty, inadequate housing, traffic congestion, and vulnerability to climate change.
+            </p>
+
+            <p style="margin-bottom: 12px;">
+              Urban sprawl, rising air pollution, and under-served informal settlements continue to exacerbate inequality and environmental degradation.
+              <strong>One billion people currently live in slums</strong>—lacking adequate access to water, sanitation, transport, and safety.
+            </p>
+
+            <p style="margin-bottom: 12px;">
+              <strong>SDG 11 seeks to promote urban planning, access to affordable housing and transport, green public spaces, and participatory governance</strong>—ensuring that cities grow in a way that is inclusive, safe, adaptive, and environmentally sustainable.
+            </p>
+
+            <p style="margin-bottom: 10px;">
+              <strong>Target 11.1:</strong> By 2030, ensure access for all to adequate, safe and affordable housing and basic services and upgrade slums.
+            </p>
+
+
+          <hr class="accordion-panelsection-divider">
+        </div>
+
+          <!-- 11.2.1 -->
+          <div class="switch-group">
+            <label class="switch-item">
+              <input type="checkbox" class="exclusive-toggle" checked>
+              <span class="slider"></span>
+              <span class="label-text">
+                SDG Indicator 11.2.1 – Administrative-level
+                <span class="info-icon"><i class="fas fa-info"></i>
+                  
+                  <div class="table-tooltip">
+                    <table class="indicator-table">
+                      <thead>
+                        <tr>
+                          <th style="text-decoration: underline;">Indicator Title</th>
+                          <th style="text-decoration: underline;">Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><p style="font-weight: 500; text-decoration: underline;">SDG 11.2.1: Public transport access</p></td>
+                          <td><p style="font-weight: 400;">Measures the percentage of urban population with convenient access to public transport (typically within 500 meters).</p></td>
+                        </tr>
+                        <tr>
+                          <td><p style="font-weight: 500; text-decoration: underline;">SDG 11.7.1: Public space access</td>
+                          <td><p style="font-weight: 400;">Measures the share of built-up area that is open public space and the share of people within 400 meters of a public open space.</p></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </span>
+              </span>
+            </label>
+          </div>
+          <!--11.3.1-->
+          <div class="switch-group">
+          <label class="switch-item">
+            <input type="checkbox" class="exclusive-toggle">
+            <span class="slider"></span>
+            <span class="label-text">SDG Indicator 11.3.1 – Administrative-level</span>
+          </label>
+          </div>
+
+          <!--11.7.1-->
+          <div class="switch-group">
+          <label class="switch-item">
+            <input type="checkbox" class="exclusive-toggle">
+            <span class="slider"></span>
+            <span class="label-text">SDG Indicator 11.7.1 – Administrative-level</span>
+          </label>
+          </div>
+          <!-- 11.1.1-->
+          <div class="switch-group">
+          <label class="switch-item">
+            <input type="checkbox" class="exclusive-toggle">
+            <span class="slider"></span>
+            <span class="label-text">SDG Indicator  11.1.1 – Administrative-level</span>
+          </label>
+          </div>
+          <!--11.3.2-->
+          <div class="switch-group">
+          <label class="switch-item">
+            <input type="checkbox" class="exclusive-toggle">
+            <span class="slider"></span>
+            <span class="label-text">SDG Indicator 11.3.2 – Administrative-level</span>
+          </label>
+          </div>
+          <!--11.6.1-->
+          <div class="switch-group">
+          <label class="switch-item">
+            <input type="checkbox" class="exclusive-toggle">
+            <span class="slider"></span>
+            <span class="label-text">SDG Indicator 11.6.1 – Administrative-level</span>
+          </label>
+          </div>
+          <!--11.a.1-->
+          <div class="switch-group">
+          <label class="switch-item">
+            <input type="checkbox" class="exclusive-toggle">
+            <span class="slider"></span>
+            <span class="label-text">SDG Indicator 11.a.1 – Administrative-level</span>
+          </label>
+          </div>
+          <!--11.c.1-->
+          <div class="switch-group">
+          <label class="switch-item">
+            <input type="checkbox" class="exclusive-toggle">
+            <span class="slider"></span>
+            <span class="label-text">SDG Indicator 11.c.1 – Administrative-level</span>
+          </label>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    
+
+    <!-- Content Area -->
+    <section class="content-area" id="content">
+      <h2>Urban Indicator Dashboard</h2>
+      <p>Select an item from the side panel to begin.</p>
+
+      <!-- Button Group at Bottom -->
+      <div class="tab-buttons">
+        <button class="tab-btn">Charts</button>
+        <button class="tab-btn">Tables</button>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script src="JS/NavToggle.js"></script>
+</body>
+</html>
