@@ -391,7 +391,7 @@ body {
 }
 
 .sidebar::-webkit-scrollbar-thumb {
-  background-color: #fcc2a1; /* UN-Habitat blue */
+  background-color: #c2c2c2; /* UN-Habitat blue */
   border-radius: 1px;
   border: 1px solid #ffffff; /* Matches sidebar background */
 }
@@ -541,7 +541,10 @@ body {
 }
 
 .accordion-btn:hover {
-  background-color: #00b2e3c7;
+ /* background-color: #00b2e3c7;*/
+ margin-bottom: 0px;
+ 
+  
 }
 
 .accordion-panel {
@@ -579,9 +582,9 @@ body {
   margin-top: 16px;
   padding: 5px 5px;
   padding-top: 10px;
-  background-color: #FFD6A8;
+  background-color: #f2f2f2;
   border: 0px solid #ddd;
-  color: black;
+  color: #fcb712;
   border-radius: 1px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
