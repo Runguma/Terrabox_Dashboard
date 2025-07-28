@@ -13,6 +13,8 @@
 
 body {
   font-family: "Segoe UI", sans-serif;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .leftaligned-text {
@@ -347,27 +349,58 @@ body {
 
   font-family: "Roboto", sans-serif;
   transition: all 0.3s ease;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 /* Sidebar */
 
 .sidebar {
   width: 5vw;
-  min-width: 350px;
+  min-width: 356px;
   max-width: 400px;
-  background-color: #FFECD6 ;
-  /* UN-Habitat blue */
-  border-right:#00B2E3 1px solid;
+  background-color: #FFECD6;
+  border-right: #00B2E3 1px solid;
 
   color: #00B2E3;
   display: flex;
   flex-direction: column;
+
   padding: 0px;
-  transition: width 0.3s ease;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.75);
+  transition: width 0.3s ease, transform 0.3s ease;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  /*box-shadow: 8px 8px 8px rgba(196, 196, 196, 0.5);*/
+  height: 100vh;
+  position: relative;
 }
+
+/* 🖱️ Enable scroll *only* on hover */
+.sidebar:hover {
+  overflow-y: auto;
+}
+
+/* 🧩 WebKit scrollbar custom styles */
+.sidebar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent; /* Clean background */
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #fcc2a1; /* UN-Habitat blue */
+  border-radius: 1px;
+  border: 1px solid #ffffff; /* Matches sidebar background */
+}
+
+/* Optional: Scrollbar corner if both axes scroll */
+.sidebar::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
 
 /* Toggle button */
 
@@ -404,7 +437,8 @@ body {
   flex-grow: 1;
   padding: 30px;
   background-color: #f7f9fa;
-  overflow-y: auto;
+  overflow-y: hidden;
+  overflow-x: hidden;
   transition: all 0.3s ease;
 }
 
